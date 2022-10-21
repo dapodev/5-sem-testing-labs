@@ -13,6 +13,3 @@ Report is attached.
 
 #####
 test commit
-
-2
-
