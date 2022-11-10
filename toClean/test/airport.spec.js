@@ -1,9 +1,9 @@
 const assert = require('chai').assert;
 
 const Plane = require('../Planes/Plane');
-const MilitaryPlane = require('../Planes/MilitaryPlane');
-const PassengerPlane = require('../Planes/PassengerPlane');
-const Airport = require('../Airport');
+const MilitaryPlane = require('../planes/militaryPlane');
+const PassengerPlane = require('../planes/passengerPlane');
+const Airport = require('../airport');
 const MilitaryType = require('../models/MilitaryType');
 const experimentalPlane = require('../Planes/ExperimentalPlane');
 const ExperimentalTypes = require('../models/experimentalTypes');
