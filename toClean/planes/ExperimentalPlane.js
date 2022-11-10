@@ -43,7 +43,7 @@ class ExperimentalPlane extends Plane {
   }
 
   setClassificationLevel(value) {
-    this._classificationLevel = value;
+    this.classificationLevel = value;
   }
 }
 
