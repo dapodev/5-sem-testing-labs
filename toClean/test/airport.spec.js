@@ -116,7 +116,6 @@ describe('Planes test', () => {
         (plane) =>
           plane.classificationLevel === ClassificationLevel.UNCLASSIFIED
       ).length !== 0;
-
     assert.isFalse(hasUnclassifiedPlanes);
   });
 });
