@@ -65,22 +65,23 @@ describe('My Test', () => {
   it('should have military Planes with transport type', () => {
     let airport = new Airport(planes);
     let transportMilitaryPlanes = airport.getTransportMilitaryPlanes();
-    let flag = false;
+    let isOnlyMilitaries = true;
     for (let militaryPlane of transportMilitaryPlanes) {
-      if (militaryPlane.getMilitaryType() === MilitaryType.TYPE_TRANSPORT) {
-        flag = true;
+      if (militaryPlane.getMilitaryType() !== MilitaryType.TRANSPORT) {
+        isOnlyMilitaries = false;
         break;
       }
     }
-    assert.equal(flag, true);
+    assert.equal(isOnlyMilitaries, true);
   });
 
   it('should check passenger plane with max capacity', () => {
     let airport = new Airport(planes);
     let expectedPlaneWithMaxPassengersCapacity =
       airport.getPassengerPlaneWithMaxPassengersCapacity();
-    assert.isFalse(
-      expectedPlaneWithMaxPassengersCapacity == planeWithMaxPassengerCapacity
+    assert.isTrue(
+      expectedPlaneWithMaxPassengersCapacity.model ==
+        planeWithMaxPassengerCapacity.model
     );
   });
 
@@ -93,7 +94,7 @@ describe('My Test', () => {
     for (let i = 0; i < planesSortedByMaxLoadCapacity.length - 1; i++) {
       let currentPlane = planesSortedByMaxLoadCapacity[i];
       let nextPlane = planesSortedByMaxLoadCapacity[i + 1];
-      if (currentPlane.getMinLoadCapacity() > nextPlane.getMinLoadCapacity()) {
+      if (currentPlane.getMaxLoadCapacity() > nextPlane.getMaxLoadCapacity()) {
         nextPlaneMaxLoadCapacityIsHigherThanCurrent = false;
         break;
       }

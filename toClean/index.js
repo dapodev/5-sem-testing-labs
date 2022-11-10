@@ -22,24 +22,24 @@ const ClassificationLevel = require('./models/ClassificationLevel');
       1050,
       21000,
       80000,
-      MilitaryType.TYPE_BOMBER
+      MilitaryType.BOMBER
     ),
     new MilitaryPlane(
       'B-2 Spirit',
       1030,
       22000,
       70000,
-      MilitaryType.TYPE_BOMBER
+      MilitaryType.BOMBER
     ),
     new MilitaryPlane(
       'B-52 Stratofortress',
       1000,
       20000,
       80000,
-      MilitaryType.TYPE_BOMBER
+      MilitaryType.BOMBER
     ),
-    new MilitaryPlane('F-15', 1500, 12000, 10000, MilitaryType.TYPE_FIGHTER),
-    new MilitaryPlane('F-22', 1550, 13000, 11000, MilitaryType.TYPE_FIGHTER),
+    new MilitaryPlane('F-15', 1500, 12000, 10000, MilitaryType.FIGHTER),
+    new MilitaryPlane('F-22', 1550, 13000, 11000, MilitaryType.FIGHTER),
     new MilitaryPlane(
       'C-130 Hercules',
       650,
@@ -67,19 +67,19 @@ const ClassificationLevel = require('./models/ClassificationLevel');
 
   let airport = new Airport(planes);
   let militaryAirport = new Airport(airport.getMilitaryPlanes());
-  let passengerAirport = new Airport(airport.getPasPl());
+  let passengerAirport = new Airport(airport.getPassengerPlanes());
   console.log(
-    `Military airport sorted by max distance: ${Airport.print(
+    `Military airport sorted by max distance: ${Airport.getJsonPlanes(
       militaryAirport.sortByMaxDistance()
     )}`
   );
   console.log(
-    `Passenger airport sorted by max speed: ${Airport.print(
+    `Passenger airport sorted by max speed: ${Airport.getJsonPlanes(
       passengerAirport.sortByMaxSpeed()
     )}`
   );
   console.log(
-    `Plane with max passenger capacity: ${Airport.print(
+    `Plane with max passenger capacity: ${Airport.getJsonPlanes(
       passengerAirport.getPassengerPlaneWithMaxPassengersCapacity()
     )}`
   );
