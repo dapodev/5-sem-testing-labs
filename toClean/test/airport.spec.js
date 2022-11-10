@@ -3,10 +3,10 @@ const assert = require('chai').assert;
 const Plane = require('../Planes/Plane');
 const MilitaryPlane = require('../planes/militaryPlane');
 const PassengerPlane = require('../planes/passengerPlane');
+const ExperimentalPlane = require('../Planes/ExperimentalPlane');
 const Airport = require('../airport');
 const MilitaryType = require('../models/MilitaryType');
-const experimentalPlane = require('../Planes/ExperimentalPlane');
-const ExperimentalTypes = require('../models/experimentalTypes');
+const ExperimentalTypes = require('../models/experimentalType');
 const ClassificationLevel = require('../models/ClassificationLevel');
 
 describe('My Test', () => {
@@ -37,7 +37,7 @@ describe('My Test', () => {
       110000,
       MilitaryType.TRANSPORT
     ),
-    new experimentalPlane(
+    new ExperimentalPlane(
       'Bell X-14',
       277,
       482,
@@ -45,7 +45,7 @@ describe('My Test', () => {
       ExperimentalTypes.HIGH_ALTITUDE,
       ClassificationLevel.SECRET
     ),
-    new experimentalPlane(
+    new ExperimentalPlane(
       'Ryan X-13 Vertijet',
       560,
       307,
