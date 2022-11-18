@@ -4,7 +4,6 @@ import {
   By,
   Key,
   until,
-  WebDriver,
 } from 'selenium-webdriver';
 
 import {
