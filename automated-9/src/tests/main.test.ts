@@ -15,7 +15,7 @@ import {
 } from '../constants';
 
 describe('Search tests', () => {
-  it('Search by худи', async () => {
+  it('search by "худи"', async () => {
     const driver = await new Builder().forBrowser(Browser.EDGE).build();
     try {
       await driver.get(WEBSITE_URL);
