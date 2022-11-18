@@ -42,5 +42,5 @@ describe('Search tests', () => {
     } finally {
       await driver.quit();
     }
-  }, 0);
+  });
 });
