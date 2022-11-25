@@ -3,8 +3,6 @@ import { PageLoadStrategy } from 'selenium-webdriver/lib/capabilities';
 import FavoritesPage from './pages/FavoritesPage';
 import HomePage from './pages/HomePage';
 
-import ItemPage from './pages/ItemPage';
-
 const ITEM_PAGE_LINK =
   'https://markformelle.by/catalog/zhenshchinam/mf-life/bryuki-leginsy/182458-8533-1050/';
 
@@ -23,10 +21,8 @@ describe('Favorites tests', () => {
   it('check if item is added to favorites', async () => {
     const homePage = new HomePage(driver);
     await homePage.init();
+    
     const itemPage = await homePage.goToFirstItemPage();
-
-    // const itemPage = new ItemPage(driver);
-    // await itemPage.init(ITEM_PAGE_LINK);
     await itemPage.addThisToCart();
 
     const favoritesPage = new FavoritesPage(driver);

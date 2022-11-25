@@ -1,4 +1,4 @@
-import { By, until, WebDriver } from 'selenium-webdriver';
+import { By, WebDriver } from 'selenium-webdriver';
 
 const ADD_TO_FAV_BUTTON_CLASSNAME = 'js-btn-to-fav--cat';
 

@@ -1,5 +1,4 @@
-import { Actions, By, Key, until, WebDriver } from 'selenium-webdriver';
-import { Executor } from 'selenium-webdriver/http';
+import { By, Key, WebDriver } from 'selenium-webdriver';
 
 import { UrlLink } from '../../constants';
 import ItemPage from './ItemPage';
@@ -16,8 +15,8 @@ class HomePage {
   constructor(private driver: WebDriver) {}
 
   async init(): Promise<WebDriver> {
-    await this.driver.sleep(3000);
     await this.driver.get(this.pageUrl);
+    await this.driver.sleep(3000);
     return this.driver;
   }
 
