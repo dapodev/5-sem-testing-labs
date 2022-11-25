@@ -15,7 +15,7 @@ class ItemPage {
   }
 
   async addThisToCart(): Promise<WebDriver> {
-    await this.driver.sleep(4000);
+    await this.driver.sleep(6000);
     await this.driver.findElement(this.addToFavoritesButtonLocator).click();
     return this.driver;
   }
