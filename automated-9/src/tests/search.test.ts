@@ -1,52 +1,55 @@
-import { Browser, Builder, Capabilities, WebDriver } from 'selenium-webdriver';
-import { PageLoadStrategy } from 'selenium-webdriver/lib/capabilities';
+// import { Browser, Builder, Capabilities, WebDriver } from 'selenium-webdriver';
+// import { PageLoadStrategy } from 'selenium-webdriver/lib/capabilities';
 
-import HomePage from './pages/HomePage';
-import { TEST_CASE_INPUTS } from '../constants';
+import { Condition } from "selenium-webdriver";
 
-describe('Search tests', () => {
-  let driver: WebDriver;
+// import HomePage from './pages/HomePage';
+// import { TEST_CASE_INPUTS } from '../constants';
 
-  beforeEach(async () => {
-    driver = await new Builder()
-      .forBrowser(Browser.EDGE)
-      .withCapabilities(
-        Capabilities.edge().setPageLoadStrategy(PageLoadStrategy.NORMAL)
-      )
-      .build();
-  });
+// describe('Search tests', () => {
+//   let driver: WebDriver;
 
-  it('search by "худи"', async () => {
-    const homePape = new HomePage(driver);
-    await homePape.init();
+//   beforeEach(async () => {
+//     driver = await new Builder()
+//       .forBrowser(Browser.EDGE)
+//       .withCapabilities(
+//         Capabilities.edge().setPageLoadStrategy(PageLoadStrategy.NORMAL)
+//       )
+//       .build();
+//   });
 
-    const searchResultPage = await homePape.searchFor(
-      TEST_CASE_INPUTS.testCaseSearchValueHoodi
-    );
+//   it('search by "худи"', async () => {
+//     const homePape = new HomePage(driver);
+//     await homePape.init();
 
-    const hasTotalMatch = await searchResultPage.isResultMatches(
-      TEST_CASE_INPUTS.testCaseSearchValueHoodi
-    );
+//     const searchResultPage = await homePape.searchFor(
+//       TEST_CASE_INPUTS.testCaseSearchValueHoodi
+//     );
 
-    expect(hasTotalMatch).toBeTruthy();
-  });
+//     const hasTotalMatch = await searchResultPage.isResultMatches(
+//       TEST_CASE_INPUTS.testCaseSearchValueHoodi
+//     );
 
-  it('search by "майка"', async () => {
-    const homePape = new HomePage(driver);
-    await homePape.init();
+//     expect(hasTotalMatch).toBeTruthy();
+//   });
 
-    const searchResultPage = await homePape.searchFor(
-      TEST_CASE_INPUTS.testCaseSearchValueShirt
-    );
+//   it('search by "майка"', async () => {
+//     const homePape = new HomePage(driver);
+//     await homePape.init();
 
-    const hasTotalMatch = await searchResultPage.isResultMatches(
-      TEST_CASE_INPUTS.testCaseSearchValueShirt
-    );
+//     const searchResultPage = await homePape.searchFor(
+//       TEST_CASE_INPUTS.testCaseSearchValueShirt
+//     );
 
-    expect(hasTotalMatch).toBeTruthy();
-  });
+//     const hasTotalMatch = await searchResultPage.isResultMatches(
+//       TEST_CASE_INPUTS.testCaseSearchValueShirt
+//     );
 
-  afterEach(async () => {
-    await driver.quit();
-  });
-});
+//     expect(hasTotalMatch).toBeTruthy();
+//   });
+
+//   afterEach(async () => {
+//     await driver.quit();
+//   });
+
+// });

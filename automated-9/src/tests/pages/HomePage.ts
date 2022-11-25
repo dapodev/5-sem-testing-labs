@@ -1,4 +1,4 @@
-import { By, Key, WebDriver } from 'selenium-webdriver';
+import { By, Key, until, WebDriver } from 'selenium-webdriver';
 
 import { UrlLink } from '../../constants';
 import ItemPage from './ItemPage';
@@ -38,6 +38,7 @@ class HomePage {
 
   async goToFirstItemPage(): Promise<ItemPage> {
     const firstItem = await this.driver.findElement(this.itemLocator);
+    await this.driver.wait(until.elementIsEnabled(firstItem));
     await firstItem.click();
     return new ItemPage(this.driver);
   }
