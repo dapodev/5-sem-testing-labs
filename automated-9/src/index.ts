@@ -1,49 +1,38 @@
-import { assert } from 'console';
-import {
-  Browser,
-  Builder,
-  By,
-  Capabilities,
-  Key,
-  until,
-} from 'selenium-webdriver';
+// import { assert } from 'console';
+// import {
+//   Browser,
+//   Builder,
+//   By,
+//   Capabilities,
+//   Key,
+//   until,
+// } from 'selenium-webdriver';
 
-import {
-  ITEM_TITLE_LINK_CLASSNAME,
-  SEARCH_BAR_CLASSNAME,
-  TEST_CASE_INPUTS,
-  TEST_CASE_URLS,
-  WEBSITE_URL,
-} from './constants';
+// import {
+//   ITEM_TITLE_LINK_CLASSNAME,
+//   SEARCH_BAR_CLASSNAME,
+//   TEST_CASE_INPUTS,
+//   TEST_CASE_URLS,
+// } from './constants';
+// import HomePage from './tests/pages/HomePage';
 
-const SearchTestCase = async () => {
-  const driver = await new Builder().forBrowser(Browser.EDGE).build();
-  try {
-    await driver.get(WEBSITE_URL);
+// const SearchTestCase = async () => {
+//   const driver = await new Builder().forBrowser(Browser.EDGE).build();
 
-    const searchBar = await driver.findElement(
-      By.className(SEARCH_BAR_CLASSNAME)
-    );
+//     const homePape = new HomePage(driver);
+//     await homePape.init();
 
-    await searchBar.sendKeys(TEST_CASE_INPUTS.testCaseSearchValue, Key.ENTER);
-    await driver.wait(
-      until.urlContains(TEST_CASE_URLS.searchUrlPatternContain)
-    );
+//     const searchResultPage = await homePape.searchFor(
+//       TEST_CASE_INPUTS.testCaseSearchValueHoodi
+//     );
 
-    const foundElements = await driver.findElements(
-      By.className(ITEM_TITLE_LINK_CLASSNAME)
-    );
+//     const hasTotalMatch = await searchResultPage.isResultMatches(
+//       TEST_CASE_INPUTS.testCaseSearchValueHoodi
+//     );
 
-    for (const webElement of foundElements) {
-      const innerElementText = await webElement.getText();
-      assert(!innerElementText.includes(TEST_CASE_INPUTS.testCaseSearchValue));
-      
-    }
-  } catch (error) {
-    console.log(error);
-  } finally {
-    await driver.quit();
-  }
-};
+//     // expect(hasTotalMatch).toBeTruthy();
 
-SearchTestCase();
+//     await driver.quit();
+// };
+
+// SearchTestCase();
