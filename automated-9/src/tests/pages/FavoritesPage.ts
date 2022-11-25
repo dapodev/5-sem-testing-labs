@@ -1,4 +1,4 @@
-import { By, WebDriver } from 'selenium-webdriver';
+import { By, until, WebDriver } from 'selenium-webdriver';
 
 import { UrlLink } from '../../constants';
 
@@ -14,7 +14,9 @@ class FavoritesPage {
 
   async init(): Promise<WebDriver> {
     await this.driver.get(this.pageUrl);
-    await this.driver.sleep(3000);
+    await this.driver.wait(
+      until.elementsLocated(this.favoritesListItemLocator)
+    );
     return this.driver;
   }
 

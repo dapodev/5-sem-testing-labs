@@ -1,4 +1,4 @@
-import { By, WebDriver } from 'selenium-webdriver';
+import { By, until, WebDriver } from 'selenium-webdriver';
 
 const ADD_TO_FAV_BUTTON_CLASSNAME = 'js-btn-to-fav--cat';
 
@@ -15,12 +15,8 @@ class ItemPage {
   }
 
   async addThisToCart(): Promise<WebDriver> {
-    await this.driver.sleep(3000);
-    const addToFavoritesButton = await this.driver.findElement(
-      this.addToFavoritesButtonLocator
-    );
-    await addToFavoritesButton.click();
-
+    await this.driver.sleep(4000);
+    await this.driver.findElement(this.addToFavoritesButtonLocator).click();
     return this.driver;
   }
 }

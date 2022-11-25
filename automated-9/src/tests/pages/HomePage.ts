@@ -16,7 +16,6 @@ class HomePage {
 
   async init(): Promise<WebDriver> {
     await this.driver.get(this.pageUrl);
-    await this.driver.sleep(3000);
     return this.driver;
   }
 
